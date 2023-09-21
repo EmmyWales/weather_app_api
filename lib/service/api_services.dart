@@ -15,11 +15,12 @@ Future fetchWeather() async {
       "lon": long,
       "appId": apiKey,
     });
+    print(response.data.toString());
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> responseData = response.data;
       final WeatherData weatherData = WeatherData.fromJson(responseData);
-
+      print(weatherData.name);
       return weatherData;
     }
 
